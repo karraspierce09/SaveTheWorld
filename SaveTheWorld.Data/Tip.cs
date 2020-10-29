@@ -8,5 +8,7 @@ namespace SaveTheWorld.Data
 {
     public class Tip
     {
+        [Key]
+        public int TipId { get; set; }
     }
 }
