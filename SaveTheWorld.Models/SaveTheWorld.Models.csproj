@@ -55,6 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipCreate.cs" />
+    <Compile Include="TipDetail.cs" />
+    <Compile Include="TipEdit.cs" />
+    <Compile Include="TipListItems.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -42,6 +43,7 @@ namespace SaveTheWorld.Data
         public DbSet<Approval> Approvals { get; set; }
 
         public DbSet<Disapproval> Disapprovals { get; set; }
+        public IEnumerable<object> Comments { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
