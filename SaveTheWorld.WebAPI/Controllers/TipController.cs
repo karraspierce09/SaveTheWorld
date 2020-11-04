@@ -28,6 +28,13 @@ namespace SaveTheWorld.WebAPI.Controllers
             return Ok(tips);
         }
 
+        public IHttpActionResult Get(int id)
+        {
+            TipService tipService = CreateTipService();
+            var tip = tipService.GetTipByID(id);
+            return Ok(tip);
+        }
+
         public IHttpActionResult Post (TipCreate tip)
         {
             if (!ModelState.IsValid)
@@ -41,17 +48,17 @@ namespace SaveTheWorld.WebAPI.Controllers
             return Ok();
         }
 
-        public IHttpActionResult Put(TipEdit tip)
+        public IHttpActionResult Put(TipEdit tip, int id)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var service = CreateTipService();
 
-            if (!service.UpdateTip(tip))
+            if (!service.UpdateTip(tip, id))
                 return InternalServerError();
 
-            return Ok();
+            return Ok("This has been updated");
         }
         public IHttpActionResult Delete(int id)
         {

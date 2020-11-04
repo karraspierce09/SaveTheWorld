@@ -13,12 +13,12 @@ namespace SaveTheWorld.Data
         [Key]
         public int TipID { get; set; }
 
-        [Required]
-        public Guid OwnerID { get; set; }
+       [Required]
+       public Guid OwnerID { get; set; }
 
         //[ForeignKey(nameof(OwnerAuthor))]
         //[Display(Name = "Author")]
-        //public virtual Owner Owner { get; set;}
+       // public virtual Owner Owner { get; set;}
 
         [Required]
         public string Title { get; set; }
