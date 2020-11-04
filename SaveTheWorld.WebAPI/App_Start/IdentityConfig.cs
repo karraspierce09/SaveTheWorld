@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
+using SaveTheWorld.Data;
 using SaveTheWorld.WebAPI.Models;
 
 namespace SaveTheWorld.WebAPI
@@ -28,8 +29,8 @@ namespace SaveTheWorld.WebAPI
             // Configure validation logic for passwords
             manager.PasswordValidator = new PasswordValidator
             {
-                RequiredLength = 6,
-                RequireNonLetterOrDigit = true,
+                RequiredLength = 6, // can change to 1 for testing ease
+                RequireNonLetterOrDigit = true, // can change all to false for testing ease
                 RequireDigit = true,
                 RequireLowercase = true,
                 RequireUppercase = true,
