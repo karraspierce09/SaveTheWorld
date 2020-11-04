@@ -43,6 +43,7 @@
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -54,11 +55,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApprovalCreate.cs" />
+    <Compile Include="ApprovalDetail.cs" />
+    <Compile Include="ApprovalListItem.cs" />
+    <Compile Include="DiapprovalDetail.cs" />
+    <Compile Include="DisapprovalListItem.cs" />
+    <Compile Include="DisapprovalCreate.cs" />
+    <Compile Include="OwnerListItem.cs" />
+    <Compile Include="OwnerCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SaveTheWorld.Data\SaveTheWorld.Data.csproj">
+      <Project>{4DC92665-8608-4575-B78F-E96F3A9F87B7}</Project>
+      <Name>SaveTheWorld.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +10,11 @@ namespace SaveTheWorld.Data
 {
     public class Approval
     {
-        /*dlskjfiposjdkfjksdjiofjiosdjfiojskdjfkljaskldjfklsadjiofjiasdjfiasdkdfjiajiofjasiodjfiajsddiofjaiosddjf*/
+       [Key]
+       public Tip ApprovaledTip { get; set; }
+
+        [Required]
+        public Owner Approvaled { get; set; }
+        
     }
 }

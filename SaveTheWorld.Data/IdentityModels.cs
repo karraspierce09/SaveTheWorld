@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -19,6 +20,11 @@ namespace SaveTheWorld.Data
             // Add custom user claims here
             return userIdentity;
         }
+
+        public Task<ClaimsIdentity> GenerateUserIdentityAsync(SaveTheWorld.WebAPI.ApplicationUserManager userManager, string authenticationType)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -33,7 +39,7 @@ namespace SaveTheWorld.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Tip> Tips { get; set; } //<--- Add this
+        public DbSet<Tip> Tips { get; set; } 
 
         public DbSet<Reply> Replies { get; set; }
 
@@ -42,6 +48,8 @@ namespace SaveTheWorld.Data
         public DbSet<Approval> Approvals { get; set; }
 
         public DbSet<Disapproval> Disapprovals { get; set; }
+
+        public DbSet<Owner> Owner { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
