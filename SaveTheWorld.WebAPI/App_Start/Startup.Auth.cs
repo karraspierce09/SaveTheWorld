@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using SaveTheWorld.WebAPI.Providers;
 using SaveTheWorld.WebAPI.Models;
+using SaveTheWorld.Data;
 
 namespace SaveTheWorld.WebAPI
 {

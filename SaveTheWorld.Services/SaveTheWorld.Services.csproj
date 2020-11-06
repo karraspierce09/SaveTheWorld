@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SaveTheWorld.Data\SaveTheWorld.Data.csproj">
+      <Project>{4DC92665-8608-4575-B78F-E96F3A9F87B7}</Project>
+      <Name>SaveTheWorld.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaveTheWorld.Models\SaveTheWorld.Models.csproj">
+      <Project>{2E2D9B6D-4AB8-4A04-9EB5-E75E55CFF893}</Project>
+      <Name>SaveTheWorld.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

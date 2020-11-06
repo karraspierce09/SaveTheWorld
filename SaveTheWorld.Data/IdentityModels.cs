@@ -33,15 +33,15 @@ namespace SaveTheWorld.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Tip> Tips { get; set; } //<--- Add this
+        // public DbSet<Tip> Tips { get; set; } //<--- Add this
 
-        public DbSet<Reply> Replies { get; set; }
+        // public DbSet<Reply> Replies { get; set; }
 
-        public DbSet<CommentToReply> CommentToReplies { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
-        public DbSet<Approval> Approvals { get; set; }
+        // public DbSet<Approval> Approvals { get; set; }
 
-        public DbSet<Disapproval> Disapprovals { get; set; }
+        // public DbSet<Disapproval> Disapprovals { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
