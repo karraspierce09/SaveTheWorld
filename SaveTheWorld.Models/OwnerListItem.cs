@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SaveTheWorld.Models
 {
-    class OwnerListItem
+    public class OwnerListItem
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

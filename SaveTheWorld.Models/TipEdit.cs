@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using SaveTheWorld.Data;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace SaveTheWorld.Models
 {
-   public class ApprovalDetail
+    public class TipEdit
     {
-        public Owner Approvaler { get; set; }
+
+        public int TipID { get; set; }
+        public string TipText { get; set; }
+        public string Title { get; set; }
     }
 }

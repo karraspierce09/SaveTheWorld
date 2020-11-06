@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SaveTheWorld.Models
 {
-    class ApprovalCreate
+    public class ApprovalCreate
     {
         public Owner Approvaled { get; set; }
     }

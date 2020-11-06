@@ -64,6 +64,14 @@
     <Compile Include="OwnerListItem.cs" />
     <Compile Include="OwnerCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReplyCreate.cs" />
+    <Compile Include="ReplyDetail.cs" />
+    <Compile Include="ReplyEdit.cs" />
+    <Compile Include="ReplyListItem.cs" />
+    <Compile Include="TipCreate.cs" />
+    <Compile Include="TipDetail.cs" />
+    <Compile Include="TipEdit.cs" />
+    <Compile Include="TipListItems.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

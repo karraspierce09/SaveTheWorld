@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SaveTheWorld.Models
 {
-    class DisapprovalCreate
+    public class DisapprovalCreate
     {
         public Owner Disapprovaled { get; set; }
     }

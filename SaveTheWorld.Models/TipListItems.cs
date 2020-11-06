@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace SaveTheWorld.Models
 {
-    public class OwnerCreate
+    public class TipListItems
     {
-        public string Name { get; set; }
-        public string Email { get; set; }
+        public int TipID { get; set; }
+        public string Title { get; set; }
+        public string TipText { get; set; }
     }
 }
