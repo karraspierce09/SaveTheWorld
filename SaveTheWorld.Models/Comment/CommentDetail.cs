@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 
 namespace SaveTheWorld.Models
 {
-    public class TipEdit
+    public class CommentDetail
     {
+        public int CommentId { get; set; }
+        public string CommentText { get; set; }
 
-        public int TipID { get; set; }
-        public string TipText { get; set; }
-        public string Title { get; set; }
-
-        [Display(Name = "Date Created")]
+        [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
 
-        [Display(Name = "Date Edited")]
+        [Display(Name = "Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
+
     }
 }

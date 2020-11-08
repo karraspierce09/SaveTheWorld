@@ -16,9 +16,9 @@ namespace SaveTheWorld.Data
        [Required]
        public Guid OwnerID { get; set; }
 
-        //[ForeignKey(nameof(OwnerAuthor))]
-        //[Display(Name = "Author")]
-       // public virtual Owner Owner { get; set;}
+        [ForeignKey(nameof(Owner))]
+        [Display(Name = "Author")]
+        public virtual Owner Owner { get; set;}
 
         [Required]
         public string Title { get; set; }

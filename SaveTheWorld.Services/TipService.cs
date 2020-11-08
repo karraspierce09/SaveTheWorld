@@ -69,9 +69,8 @@ namespace SaveTheWorld.Services
                     {
                         TipID = entity.TipID,
                         TipText = entity.TipText,
-                      //Category = entity.Category,
                         Title = entity.Title,
-                        //Owner = entity.Owner
+                        Owner = entity.Owner
                     };
             }
         }
@@ -85,10 +84,10 @@ namespace SaveTheWorld.Services
                     .Tips
     
                     .Single(e => e.TipID == id && e.OwnerID == _userID);
-                  //  .Single(e => e.TipID == model.TipID && e.OwnerID == _userID);
+   
 
                 entity.TipText = model.TipText;
-                //entity.TipID = model.TipID;
+    
                 entity.Title = model.Title;
 
                 return ctx.SaveChanges() == 1;

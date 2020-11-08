@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -11,9 +13,21 @@ using Microsoft.AspNet.Identity.Owin;
 namespace SaveTheWorld.Data
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
-    public class ApplicationUser : IdentityUser
+    public class Owner : IdentityUser
     {
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
+
+        [Key]
+        public Guid OwnerId { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public string OwnerEmail { get; set; }
+
+       // public string Password { get; set; }
+
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<Owner> manager, string authenticationType)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, authenticationType);
@@ -22,7 +36,7 @@ namespace SaveTheWorld.Data
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<Owner>
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -36,14 +50,14 @@ namespace SaveTheWorld.Data
 
         public DbSet<Tip> Tips { get; set; } //<--- Add this
 
-       // public DbSet<Reply> Replies { get; set; }
+        public DbSet<Reply> Replies { get; set; }
 
-       // public DbSet<CommentToReply> CommentToReplies { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
-     //   public DbSet<Approval> Approvals { get; set; }
+        public DbSet<Approval> Approvals { get; set; }
 
-      //  public DbSet<Disapproval> Disapprovals { get; set; }
-        public IEnumerable<object> Comments { get; set; }
+        public DbSet<Disapproval> Disapprovals { get; set; }
+       // public IEnumerable<object> Comments { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
