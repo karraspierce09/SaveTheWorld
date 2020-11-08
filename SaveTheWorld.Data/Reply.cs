@@ -25,10 +25,10 @@ namespace SaveTheWorld.Data
         //[Display(Name = "Your Reply")]
         public string ReplyText { get; set; }
 
-        // Owner class needs to be made/edited first
         //[ForeignKey(nameof(Author))]
-        //public Guid OwnerId { get; set; }
+        public Guid OwnerId { get; set; }
         //public virtual Owner Author { get; set; }
+        public string Name { get; set; }
 
         [Required]
         //[Display(Name = "Date Created")]

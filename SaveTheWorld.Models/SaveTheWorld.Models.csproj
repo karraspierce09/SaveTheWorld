@@ -64,10 +64,19 @@
     <Compile Include="ReplyDetail.cs" />
     <Compile Include="ReplyEdit.cs" />
     <Compile Include="ReplyListItem.cs" />
+    <Compile Include="Tip\TipCreate.cs" />
+    <Compile Include="Tip\TipDetail.cs" />
+    <Compile Include="Tip\TipEdit.cs" />
+    <Compile Include="Tip\TipListItems.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Approval\" />
+    <Folder Include="CommentToReply\" />
+    <Folder Include="Disapproval\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />

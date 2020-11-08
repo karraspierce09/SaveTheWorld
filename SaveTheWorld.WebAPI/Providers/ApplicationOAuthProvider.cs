@@ -32,7 +32,7 @@ namespace SaveTheWorld.WebAPI.Providers
         {
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
-            ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
+            Owner user = await userManager.FindAsync(context.UserName, context.Password);
 
             if (user == null)
             {

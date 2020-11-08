@@ -15,7 +15,7 @@ namespace SaveTheWorld.Services
 
         private readonly Guid _userId;  // 
 
-        public ReplyService(Guid userId)    // edited class name
+        public ReplyService(Guid userId)    // 
         {
             _userId = userId;
         }
@@ -26,7 +26,7 @@ namespace SaveTheWorld.Services
             var entity =
                 new Reply()
                 {
-                    //OwnerId = _userId,
+                    OwnerId = _userId,  //
                     ReplyText = model.ReplyText,
                     //Tip = model.Tip,
                     //Author = model.Author,
@@ -48,13 +48,14 @@ namespace SaveTheWorld.Services
                 var query =
                     ctx
                         .Replies
-                        //.Where(e => e.OwnerId == _userId)
+                        .Where(e => e.OwnerId == _userId)   //
                         .Select(
                             e =>
                                 new ReplyListItem
                                 {
                                     ReplyId = e.ReplyId,
                                     ReplyText = e.ReplyText,
+                                    Name = e.Name,  //
                                     CreatedUtc = e.CreatedUtc
                                 }
                         );
@@ -71,7 +72,7 @@ namespace SaveTheWorld.Services
                 var entity =
                     ctx
                         .Replies
-                        .Single(e => e.ReplyId == id);  // Change to this after adding the Owner class: .Single(e => e.ReplyId == id && e.OwnerId == _userId);
+                        .Single(e => e.ReplyId == id && e.OwnerId == _userId);  // .Single(e => e.ReplyId == id); 
                 return
                     new ReplyDetail
                     {
@@ -79,6 +80,7 @@ namespace SaveTheWorld.Services
                         ReplyText = entity.ReplyText,
                         // Tip = entitiy.Tip,
                         // Author = entity.Author,
+                        Name = entity.Name, //
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };
@@ -93,7 +95,7 @@ namespace SaveTheWorld.Services
                 var entity =
                     ctx
                         .Replies
-                        .Single(e => e.ReplyId == id);     //.Single(e => e.ReplyId == model.ReplyId);   // Once Owner is added: .Single(e => e.ReplyId == id && e.OwnerId == _userId); // OG: .Single(e => e.ReplyId == model.ReplyId && e.OwnerId == _userId);
+                        .Single(e => e.ReplyId == model.ReplyId && e.OwnerId == _userId); // .Single(e => e.ReplyId == id);     //.Single(e => e.ReplyId == model.ReplyId);   // Once Owner is added: .Single(e => e.ReplyId == id && e.OwnerId == _userId); // OG: .Single(e => e.ReplyId == model.ReplyId && e.OwnerId == _userId);
 
                 entity.ReplyText = model.ReplyText;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
@@ -110,7 +112,7 @@ namespace SaveTheWorld.Services
                 var entity =
                     ctx
                         .Replies
-                        .Single(e => e.ReplyId == replyId);  // .Single(e => e.ReplyId == replyId && e.OwnerId == _userId);
+                        .Single(e => e.ReplyId == replyId && e.OwnerId == _userId); // .Single(e => e.ReplyId == replyId);  
 
                 ctx.Replies.Remove(entity);
 

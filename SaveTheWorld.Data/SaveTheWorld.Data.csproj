@@ -92,6 +92,7 @@
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reply.cs" />
+    <Compile Include="Tip.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

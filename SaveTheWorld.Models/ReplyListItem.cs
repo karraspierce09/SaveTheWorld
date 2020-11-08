@@ -21,9 +21,11 @@ namespace SaveTheWorld.Models
         [Display(Name = "Your Reply")]
         public string ReplyText { get; set; }
 
-        // Owner class needs to be made/edited first
         //[ForeignKey(nameof(Author))]
         //public virtual Owner Author { get; set; }
+        public Guid OwnerId { get; set; }
+        [Display(Name = "Written By")]
+        public string Name { get; set; }
 
         // do not need Required here
         [Display(Name = "Date Created")]
