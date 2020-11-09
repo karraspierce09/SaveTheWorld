@@ -54,11 +54,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Approval\ApprovalCreate.cs" />
+    <Compile Include="Approval\ApprovalDetail.cs" />
+    <Compile Include="Approval\ApprovalListIttem.cs" />
+    <Compile Include="Comment\CommentDetail.cs" />
+    <Compile Include="Comment\CommentCreate.cs" />
+    <Compile Include="Comment\CommentEdit.cs" />
+    <Compile Include="Comment\CommentListItem.cs" />
+    <Compile Include="Disapproval\DisapprovalCreate.cs" />
+    <Compile Include="Disapproval\DisapprovalDetail.cs" />
+    <Compile Include="Disapproval\DisapprovalListItem.cs" />
+    <Compile Include="Owner\OwnerCreate.cs" />
+    <Compile Include="Owner\OwnerListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reply\ReplyCreate.cs" />
+    <Compile Include="Reply\ReplyDetail.cs" />
+    <Compile Include="Reply\ReplyEdit.cs" />
+    <Compile Include="Reply\ReplyListItems.cs" />
+    <Compile Include="TipCreate.cs" />
+    <Compile Include="TipDetail.cs" />
+    <Compile Include="TipEdit.cs" />
+    <Compile Include="TipListItems.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SaveTheWorld.Data\SaveTheWorld.Data.csproj">
+      <Project>{4DC92665-8608-4575-B78F-E96F3A9F87B7}</Project>
+      <Name>SaveTheWorld.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
