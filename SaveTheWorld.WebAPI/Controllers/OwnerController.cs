@@ -38,7 +38,6 @@ namespace SaveTheWorld.WebAPI.Controllers
             var userId = Guid.Parse(Owner.Identity.GetUserId());
             var userService = new OwnerService(userId);
             return userService;
-
         }
     }
 }
