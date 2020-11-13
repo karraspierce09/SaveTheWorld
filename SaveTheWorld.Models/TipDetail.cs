@@ -16,11 +16,6 @@ namespace SaveTheWorld.Models
         public string TipText { get; set; }
         //public string Category { get; set; } don't need
         public string Title { get; set; }
-
-        [ForeignKey(nameof(Owner))]
-        [Display(Name = "Author")]
-
-        public Guid OwnerId { get; set; }
-        public virtual Owner Owner { get; set; }
+        public string Id { get; set; }
     }
 }

@@ -88,17 +88,9 @@
     <Compile Include="Comment.cs" />
     <Compile Include="Disapproval.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202011110144237_First Migration.cs" />
-    <Compile Include="Migrations\202011110144237_First Migration.Designer.cs">
-      <DependentUpon>202011110144237_First Migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011130218567_Migration1.cs" />
-    <Compile Include="Migrations\202011130218567_Migration1.Designer.cs">
-      <DependentUpon>202011130218567_Migration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011130231334_Owner Name Update.cs" />
-    <Compile Include="Migrations\202011130231334_Owner Name Update.Designer.cs">
-      <DependentUpon>202011130231334_Owner Name Update.cs</DependentUpon>
+    <Compile Include="Migrations\202011130315012_initCreate.cs" />
+    <Compile Include="Migrations\202011130315012_initCreate.Designer.cs">
+      <DependentUpon>202011130315012_initCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,14 +102,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011110144237_First Migration.resx">
-      <DependentUpon>202011110144237_First Migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011130218567_Migration1.resx">
-      <DependentUpon>202011130218567_Migration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011130231334_Owner Name Update.resx">
-      <DependentUpon>202011130231334_Owner Name Update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011130315012_initCreate.resx">
+      <DependentUpon>202011130315012_initCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

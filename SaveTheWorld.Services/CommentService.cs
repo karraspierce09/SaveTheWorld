@@ -23,7 +23,7 @@ namespace SaveTheWorld.Services
             var entity =
                 new Comment()
                 {
-                    OwnerId = _userId,
+                    Id = _userId.ToString(),
                     CommentText = model.CommentText,
                     CreatedUtc = DateTimeOffset.Now
                 };
@@ -43,7 +43,7 @@ namespace SaveTheWorld.Services
                 var query =
                     ctx
                         .Comments
-                        .Where(e => e.OwnerId == _userId)
+                        .Where(e => e.Id == _userId.ToString())
                         .Select(
                             e =>
                                 new CommentListItem
@@ -66,7 +66,7 @@ namespace SaveTheWorld.Services
                 var entity =
                     ctx
                         .Comments
-                        .Single(e => e.CommentId == id && e.OwnerId == _userId);
+                        .Single(e => e.CommentId == id && e.Id == _userId.ToString());
                 return
                     new CommentDetail
                     {
@@ -86,7 +86,7 @@ namespace SaveTheWorld.Services
                 var entity =
                     ctx
                         .Comments
-                        .Single(e => e.CommentId == model.CommentId && e.OwnerId == _userId);
+                        .Single(e => e.CommentId == model.CommentId && e.Id == _userId.ToString());
 
                 entity.CommentText = model.CommentText;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
@@ -103,7 +103,7 @@ namespace SaveTheWorld.Services
                 var entity =
                     ctx
                         .Comments
-                        .Single(e => e.CommentId == commentId && e.OwnerId == _userId);
+                        .Single(e => e.CommentId == commentId && e.Id == _userId.ToString());
 
                 ctx.Comments.Remove(entity);
 

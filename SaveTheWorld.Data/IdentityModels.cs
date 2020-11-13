@@ -17,8 +17,8 @@ namespace SaveTheWorld.Data
     public class Owner : IdentityUser
     {
 
-        [Key]
-        public Guid OwnerId { get; set; }
+        //[Key]
+        //public Guid OwnerId { get; set; }
 
         [Required]
         public string Name { get; set; }
