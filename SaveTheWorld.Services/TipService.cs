@@ -18,23 +18,23 @@ namespace SaveTheWorld.Services
         }
 
 
-
         public bool CreateTip(TipCreate model)
-        {
-            var entity =
-                new Tip()
-                {
-                    OwnerId = _userID,
-                    TipId = model.TipId,
-                    TipText = model.TipText,
-                    Title = model.Title
-                };
-            using (var ctx = new ApplicationDbContext())
-            {
-                ctx.Tips.Add(entity);
-                return ctx.SaveChanges() == 1;
-            }
-        }
+         {
+             var entity =
+                 new Tip()
+                 {
+                     OwnerId = _userID,
+                     TipId = model.TipId,
+                     TipText = model.TipText,
+                     Title = model.Title
+                 };
+             using (var ctx = new ApplicationDbContext())
+             {
+                 ctx.Tips.Add(entity);
+                 return ctx.SaveChanges() == 1;
+             }
+         }
+        
 
         public IEnumerable<TipListItems> GetTips()
         {
@@ -83,12 +83,12 @@ namespace SaveTheWorld.Services
                 var entity =
                     ctx
                     .Tips
-    
+
                     .Single(e => e.TipId == id && e.OwnerId == _userID);
-   
+
 
                 entity.TipText = model.TipText;
-    
+
                 entity.Title = model.Title;
 
                 return ctx.SaveChanges() == 1;

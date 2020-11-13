@@ -23,10 +23,7 @@ namespace SaveTheWorld.Data
         [Required]
         public string Name { get; set; }
 
-        [Required]
-        public string OwnerEmail { get; set; }
-
-        // public string Password { get; set; }
+      
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<Owner> manager, string authenticationType)
         {

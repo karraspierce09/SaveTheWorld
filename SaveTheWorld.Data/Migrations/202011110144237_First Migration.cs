@@ -126,8 +126,8 @@ namespace SaveTheWorld.Data.Migrations
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.ReplyId)
-                .ForeignKey("dbo.Owner", t => t.OwnerId, cascadeDelete: true)
-                .ForeignKey("dbo.Tip", t => t.TipId, cascadeDelete: true)
+                .ForeignKey("dbo.Owner", t => t.OwnerId, cascadeDelete: false)
+                .ForeignKey("dbo.Tip", t => t.TipId, cascadeDelete: false)
                 .Index(t => t.TipId)
                 .Index(t => t.OwnerId);
             
