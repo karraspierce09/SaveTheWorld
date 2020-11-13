@@ -26,9 +26,10 @@ namespace SaveTheWorld.Services
             new Reply()
             {
                     OwnerId = _userId,
+                    ReplyId = model.ReplyId,
                     ReplyText = model.ReplyText,
-                    Tip = model.Tip,
-                    Owner = model.Author,
+                    //Tip = model.Tip,
+                    //Owner = model.Author,
                     //Author = model.Author, used the above instead
                     CreatedUtc = DateTimeOffset.Now
             };

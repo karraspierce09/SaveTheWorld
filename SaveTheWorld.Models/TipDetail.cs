@@ -12,13 +12,15 @@ namespace SaveTheWorld.Models
     public class TipDetail
     {
 
-        public int TipID { get; set; }
+        public int TipId { get; set; }
         public string TipText { get; set; }
-        public string Category { get; set; }
+        //public string Category { get; set; } don't need
         public string Title { get; set; }
 
         [ForeignKey(nameof(Owner))]
         [Display(Name = "Author")]
+
+        public Guid OwnerId { get; set; }
         public virtual Owner Owner { get; set; }
     }
 }

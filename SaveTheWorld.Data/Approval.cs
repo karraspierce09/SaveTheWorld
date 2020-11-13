@@ -10,6 +10,8 @@ namespace SaveTheWorld.Data
     public class Approval
     {
         [Key]
+
+        public int ApprovalId { get; set; }
         public Tip ApprovaledTip { get; set; }
 
         [Required]

@@ -11,6 +11,7 @@ namespace SaveTheWorld.Data
     {
 
         [Key]
+        public int DisapprovalId { get; set; }
         public Tip DisapprovalTip { get; set; }
 
         [Required]

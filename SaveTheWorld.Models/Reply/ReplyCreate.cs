@@ -28,6 +28,8 @@ namespace SaveTheWorld.Models//.Reply
         [ForeignKey(nameof(Author))]
         public virtual Owner Author { get; set; }
 
+        
+
         // do not need date created here
     }
 }

@@ -24,8 +24,8 @@ namespace SaveTheWorld.Services
             var entity =
                 new Tip()
                 {
-                    OwnerID = _userID,
-                    TipID = model.TipID,
+                    OwnerId = _userID,
+                    TipId = model.TipId,
                     TipText = model.TipText,
                     Title = model.Title
                 };
@@ -43,13 +43,13 @@ namespace SaveTheWorld.Services
                 var query =
                     ctx
                     .Tips
-                   .Where(e => e.OwnerID == _userID)
+                   .Where(e => e.OwnerId == _userID)
                     .Select(
                         e =>
                         new TipListItems
                         {
                             Title = e.Title,
-                            TipID = e.TipID,
+                            TipId = e.TipId,
                             TipText = e.TipText
                         });
                 return query.ToArray();
@@ -63,14 +63,15 @@ namespace SaveTheWorld.Services
                 var entity =
                     ctx
                     .Tips
-                    .Single(e => e.TipID == id && e.OwnerID == _userID);
+                    .Single(e => e.TipId == id && e.OwnerId == _userID);
                 return
                     new TipDetail
                     {
-                        TipID = entity.TipID,
+                        TipId = entity.TipId,
                         TipText = entity.TipText,
                         Title = entity.Title,
-                        Owner = entity.Owner
+                        OwnerId = entity.OwnerId
+                        //Owner = entity.Owner
                     };
             }
         }
@@ -83,7 +84,7 @@ namespace SaveTheWorld.Services
                     ctx
                     .Tips
     
-                    .Single(e => e.TipID == id && e.OwnerID == _userID);
+                    .Single(e => e.TipId == id && e.OwnerId == _userID);
    
 
                 entity.TipText = model.TipText;
@@ -101,7 +102,7 @@ namespace SaveTheWorld.Services
                 var entity =
                     ctx
                     .Tips
-                    .Single(e => e.TipID == tipID && e.OwnerID == _userID);
+                    .Single(e => e.TipId == tipID && e.OwnerId == _userID);
 
                 ctx.Tips.Remove(entity);
                 return ctx.SaveChanges() == 1;
