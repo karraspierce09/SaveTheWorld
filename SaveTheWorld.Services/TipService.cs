@@ -18,23 +18,23 @@ namespace SaveTheWorld.Services
         }
 
 
-
         public bool CreateTip(TipCreate model)
-        {
-            var entity =
-                new Tip()
-                {
-                    OwnerID = _userID,
-                    TipID = model.TipID,
-                    TipText = model.TipText,
-                    Title = model.Title
-                };
-            using (var ctx = new ApplicationDbContext())
-            {
-                ctx.Tips.Add(entity);
-                return ctx.SaveChanges() == 1;
-            }
-        }
+         {
+             var entity =
+                 new Tip()
+                 {
+                     Id = _userID.ToString(),
+                     TipId = model.TipId,
+                     TipText = model.TipText,
+                     Title = model.Title
+                 };
+             using (var ctx = new ApplicationDbContext())
+             {
+                 ctx.Tips.Add(entity);
+                 return ctx.SaveChanges() == 1;
+             }
+         }
+        
 
         public IEnumerable<TipListItems> GetTips()
         {
@@ -43,13 +43,13 @@ namespace SaveTheWorld.Services
                 var query =
                     ctx
                     .Tips
-                   .Where(e => e.OwnerID == _userID)
+                   .Where(e => e.Id == _userID.ToString())
                     .Select(
                         e =>
                         new TipListItems
                         {
                             Title = e.Title,
-                            TipID = e.TipID,
+                            TipId = e.TipId,
                             TipText = e.TipText
                         });
                 return query.ToArray();
@@ -63,14 +63,15 @@ namespace SaveTheWorld.Services
                 var entity =
                     ctx
                     .Tips
-                    .Single(e => e.TipID == id && e.OwnerID == _userID);
+                    .Single(e => e.TipId == id && e.Id == _userID.ToString());
                 return
                     new TipDetail
                     {
-                        TipID = entity.TipID,
+                        TipId = entity.TipId,
                         TipText = entity.TipText,
                         Title = entity.Title,
-                        Owner = entity.Owner
+                        Id = entity.Id
+                        //Owner = entity.Owner
                     };
             }
         }
@@ -82,12 +83,12 @@ namespace SaveTheWorld.Services
                 var entity =
                     ctx
                     .Tips
-    
-                    .Single(e => e.TipID == id && e.OwnerID == _userID);
-   
+
+                    .Single(e => e.TipId == id && e.Id == _userID.ToString());
+
 
                 entity.TipText = model.TipText;
-    
+
                 entity.Title = model.Title;
 
                 return ctx.SaveChanges() == 1;
@@ -101,7 +102,7 @@ namespace SaveTheWorld.Services
                 var entity =
                     ctx
                     .Tips
-                    .Single(e => e.TipID == tipID && e.OwnerID == _userID);
+                    .Single(e => e.TipId == tipID && e.Id == _userID.ToString());
 
                 ctx.Tips.Remove(entity);
                 return ctx.SaveChanges() == 1;

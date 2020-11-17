@@ -8,7 +8,7 @@ namespace SaveTheWorld.Models
 {
     public class TipListItems
     {
-        public int TipID { get; set; }
+        public int TipId { get; set; }
         public string Title { get; set; }
         public string TipText { get; set; }
     }

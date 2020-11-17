@@ -8,7 +8,7 @@ namespace SaveTheWorld.Models//.Owner
 {
     public class OwnerListItem
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
     }

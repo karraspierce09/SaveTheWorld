@@ -14,7 +14,7 @@ namespace SaveTheWorld.Data
         public int CommentId { get; set; }
 
         [Required]
-        public Guid OwnerId { get; set; }
+        public string Id { get; set; }
 
         [Required]
         public string CommentText { get; set; }

@@ -25,8 +25,15 @@ namespace SaveTheWorld.Models//.Reply
         public string ReplyText { get; set; }
 
         //Owner class needs to be made/edited first
-        [ForeignKey(nameof(Author))]
-        public virtual Owner Author { get; set; }
+        [Required]
+        [ForeignKey(nameof(Owner))]
+        [Display(Name = "Author")]
+
+        public string Id { get; set; }
+        public virtual Owner Owner { get; set; }
+
+
+
 
         // do not need date created here
     }

@@ -18,6 +18,6 @@ namespace SaveTheWorld.Models
         [MaxLength(100, ErrorMessage ="There are too many characters. Can only have 100 for the Title.")]
         public string Title { get; set; }
 
-        public int TipID { get; set; }
+        public int TipId { get; set; }
     }
 }

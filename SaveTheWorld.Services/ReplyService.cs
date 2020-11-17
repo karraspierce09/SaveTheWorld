@@ -25,10 +25,11 @@ namespace SaveTheWorld.Services
         var entity =
             new Reply()
             {
-                    OwnerId = _userId,
+                    Id = _userId.ToString(),
+                    ReplyId = model.ReplyId,
                     ReplyText = model.ReplyText,
-                    Tip = model.Tip,
-                    Owner = model.Author,
+                    //Tip = model.Tip,
+                    //Owner = model.Author,
                     //Author = model.Author, used the above instead
                     CreatedUtc = DateTimeOffset.Now
             };
@@ -48,7 +49,7 @@ namespace SaveTheWorld.Services
             var query =
                 ctx
                     .Replies
-                    .Where(e => e.OwnerId == _userId)
+                    .Where(e => e.Id == _userId.ToString())
                     .Select(
                         e =>
                             new ReplyListItem
