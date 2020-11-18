@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SaveTheWorld.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,36 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SaveTheWorld.Data
-{
-    public class Reply
+namespace SaveTheWorld.Models//.Reply
+{   // Make it public, add properties (These are the properties that will show up in the view), add using statements
+    // We only need things in this class that the viewer will see from a posted reply
+    public class ReplyListItem
     {
-        [Key]
         public int ReplyId { get; set; }
 
         [ForeignKey(nameof(Tip))]
         public int TipId { get; set; }
         public virtual Tip Tip { get; set; }
 
-        [Required]
-        //[MinLength(1, ErrorMessage = "Please type at least 1 character.")]
-        //[MaxLength(8000, ErrorMessage = "Please have no more than 8000 characters.")]
+        // do not need Required here
+        // do not need Min/Maxlengths here
         [Display(Name = "Your Reply")]
         public string ReplyText { get; set; }
 
         // Owner class needs to be made/edited first
-        [Required]
-        [ForeignKey(nameof(Owner))]
-        [Display(Name = "Author")]
+        [ForeignKey(nameof(Author))]
+        public virtual Owner Author { get; set; }
 
-        public string Id { get; set; }
-        public virtual Owner Owner { get; set; }
-
-        [Required]
+        // do not need Required here
         [Display(Name = "Date Created")]
         public DateTimeOffset CreatedUtc { get; set; }
-        [Required]
-        [Display(Name = "Date Modified")]
-        public DateTimeOffset? ModifiedUtc { get; set; }
+
     }
 }
