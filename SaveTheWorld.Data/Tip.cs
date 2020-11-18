@@ -11,14 +11,14 @@ namespace SaveTheWorld.Data
     public class Tip
     {
         [Key]
-        public int TipID { get; set; }
+        public int TipId { get; set; }
 
-       [Required]
-       public Guid OwnerID { get; set; }
-
+        [Required]
         [ForeignKey(nameof(Owner))]
         [Display(Name = "Author")]
-        public virtual Owner Owner { get; set;}
+   
+        public string Id { get; set; }
+        public virtual Owner Owner { get; set; }
 
         [Required]
         public string Title { get; set; }

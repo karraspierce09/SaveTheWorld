@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -16,16 +17,13 @@ namespace SaveTheWorld.Data
     public class Owner : IdentityUser
     {
 
-        [Key]
-        public Guid OwnerId { get; set; }
+        //[Key]
+        //public Guid OwnerId { get; set; }
 
         [Required]
         public string Name { get; set; }
 
-        [Required]
-        public string OwnerEmail { get; set; }
-
-       // public string Password { get; set; }
+      
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<Owner> manager, string authenticationType)
         {
