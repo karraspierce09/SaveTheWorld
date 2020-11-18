@@ -22,16 +22,17 @@ namespace SaveTheWorld.Services
     // Create: Create a reply
     public bool CreateReply(ReplyCreate model)    // edited naming conventions
     {
-        var entity =
-            new Reply()
-            {
+            var entity =
+                new Reply()
+                {
                     Id = _userId.ToString(),
                     ReplyId = model.ReplyId,
                     ReplyText = model.ReplyText,
-                    //Tip = model.Tip,
-                    //Owner = model.Author,
-                    //Author = model.Author, used the above instead
-                    CreatedUtc = DateTimeOffset.Now
+                    TipId = model.TipId,
+                    ModifiedUtc = null,
+                    CreatedUtc = DateTime.Now
+                    //Owner = model.Owner,
+                    
             };
 
         using (var ctx = new ApplicationDbContext())
