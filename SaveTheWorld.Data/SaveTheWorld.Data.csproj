@@ -96,6 +96,10 @@
     <Compile Include="Migrations\202011190254533_Reply_updated.Designer.cs">
       <DependentUpon>202011190254533_Reply_updated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011191456201_FixingReply.cs" />
+    <Compile Include="Migrations\202011191456201_FixingReply.Designer.cs">
+      <DependentUpon>202011191456201_FixingReply.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reply.cs" />
@@ -111,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011190254533_Reply_updated.resx">
       <DependentUpon>202011190254533_Reply_updated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011191456201_FixingReply.resx">
+      <DependentUpon>202011191456201_FixingReply.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
