@@ -22,16 +22,17 @@ namespace SaveTheWorld.Services
     // Create: Create a reply
     public bool CreateReply(ReplyCreate model)    // edited naming conventions
     {
-        var entity =
-            new Reply()
-            {
+            var entity =
+                new Reply()
+                {
                     Id = _userId.ToString(),
                     ReplyId = model.ReplyId,
                     ReplyText = model.ReplyText,
-                    //Tip = model.Tip,
+                    TipId = model.TipId,
+                    ModifiedUtc = null,
+                    CreatedUtc = DateTimeOffset.Now
                     //Owner = model.Author,
                     //Author = model.Author, used the above instead
-                    CreatedUtc = DateTimeOffset.Now
             };
 
         using (var ctx = new ApplicationDbContext())
@@ -78,9 +79,9 @@ namespace SaveTheWorld.Services
                 {
                     ReplyId = entity.ReplyId,
                     ReplyText = entity.ReplyText,
-                       Tip = entity.Tip,
-                        Author = entity.Owner, // this was entity.author, changed to entity.owner
-                        CreatedUtc = entity.CreatedUtc,
+                    Tip = entity.Tip,
+                    Author = entity.Owner, // this was entity.author, changed to entity.owner
+                    CreatedUtc = entity.CreatedUtc,
                     ModifiedUtc = entity.ModifiedUtc
                 };
         }

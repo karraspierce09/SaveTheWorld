@@ -28,13 +28,8 @@ namespace SaveTheWorld.Models//.Reply
         [Required]
         [ForeignKey(nameof(Owner))]
         [Display(Name = "Author")]
-
         public string Id { get; set; }
         public virtual Owner Owner { get; set; }
 
-
-
-
-        // do not need date created here
     }
 }
