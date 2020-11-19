@@ -31,7 +31,6 @@ namespace SaveTheWorld.Data
         [Required]
         [Display(Name = "Date Created")]
         public DateTimeOffset CreatedUtc { get; set; }
-
         [Display(Name = "Date Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
     }

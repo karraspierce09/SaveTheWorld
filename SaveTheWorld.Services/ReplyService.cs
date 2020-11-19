@@ -30,7 +30,7 @@ namespace SaveTheWorld.Services
                     ReplyText = model.ReplyText,
                     TipId = model.TipId,
                     ModifiedUtc = null,
-                    CreatedUtc = DateTimeOffset.Now
+                    CreatedUtc = DateTime.Now
                     //Owner = model.Author,
                     //Author = model.Author, used the above instead
             };

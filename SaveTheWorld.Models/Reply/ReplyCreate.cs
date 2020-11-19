@@ -14,6 +14,7 @@ namespace SaveTheWorld.Models//.Reply
         [Key]
         public int ReplyId { get; set; }
 
+
         [ForeignKey(nameof(Tip))]
         public int TipId { get; set; }
         public virtual Tip Tip { get; set; }
