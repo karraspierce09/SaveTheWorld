@@ -17,7 +17,6 @@ namespace SaveTheWorld.Models
         [MaxLength(5000, ErrorMessage = "There are too many characters in this field.  Can only have 200 characters.")]
         public string TipText { get; set; }
 
-
         public int TipId { get; set; }
     }
 }

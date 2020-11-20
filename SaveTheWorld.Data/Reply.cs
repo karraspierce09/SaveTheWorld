@@ -21,8 +21,7 @@ namespace SaveTheWorld.Data
         [Required]
         [Display(Name = "Your Reply")]
         public string ReplyText { get; set; }
-
-        // Owner class needs to be made/edited first
+       
         [Required]
         [ForeignKey(nameof(Owner))]
         [Display(Name = "Author")]
