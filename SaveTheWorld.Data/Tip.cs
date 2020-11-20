@@ -16,7 +16,6 @@ namespace SaveTheWorld.Data
         [Required]
         [ForeignKey(nameof(Owner))]
         [Display(Name = "Author")]
-   
         public string Id { get; set; }
         public virtual Owner Owner { get; set; }
 

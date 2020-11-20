@@ -13,17 +13,15 @@ namespace SaveTheWorld.Data
         [Key]
         public int ReplyId { get; set; }
 
+        [Required]
         [ForeignKey(nameof(Tip))]
         public int TipId { get; set; }
         public virtual Tip Tip { get; set; }
 
         [Required]
-        //[MinLength(1, ErrorMessage = "Please type at least 1 character.")]
-        //[MaxLength(8000, ErrorMessage = "Please have no more than 8000 characters.")]
         [Display(Name = "Your Reply")]
         public string ReplyText { get; set; }
-
-        // Owner class needs to be made/edited first
+       
         [Required]
         [ForeignKey(nameof(Owner))]
         [Display(Name = "Author")]
@@ -34,7 +32,7 @@ namespace SaveTheWorld.Data
         [Required]
         [Display(Name = "Date Created")]
         public DateTimeOffset CreatedUtc { get; set; }
-        [Required]
+       
         [Display(Name = "Date Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
     }
