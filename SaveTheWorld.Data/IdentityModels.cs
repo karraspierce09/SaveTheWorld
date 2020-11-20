@@ -46,7 +46,7 @@ namespace SaveTheWorld.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Tip> Tips { get; set; } //<--- Add this
+        public DbSet<Tip> Tips { get; set; }
 
         public DbSet<Reply> Replies { get; set; }
 
