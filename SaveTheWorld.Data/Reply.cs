@@ -13,6 +13,7 @@ namespace SaveTheWorld.Data
         [Key]
         public int ReplyId { get; set; }
 
+        [Required]
         [ForeignKey(nameof(Tip))]
         public int TipId { get; set; }
         public virtual Tip Tip { get; set; }
@@ -31,6 +32,7 @@ namespace SaveTheWorld.Data
         [Required]
         [Display(Name = "Date Created")]
         public DateTimeOffset CreatedUtc { get; set; }
+       
         [Display(Name = "Date Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
     }

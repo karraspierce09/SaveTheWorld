@@ -12,7 +12,6 @@ namespace SaveTheWorld.Models
         [Required]
         [MaxLength(100, ErrorMessage ="There are too many characters. Can only have 100 for the Title.")]
         public string Title { get; set; }
-
         [Required]
         [MinLength(50, ErrorMessage = "Please enter at least 50 characters")]
         [MaxLength(5000, ErrorMessage = "There are too many characters in this field.  Can only have 200 characters.")]
