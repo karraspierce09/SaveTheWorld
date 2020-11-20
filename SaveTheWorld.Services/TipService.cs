@@ -71,7 +71,6 @@ namespace SaveTheWorld.Services
                         TipText = entity.TipText,
                         Title = entity.Title,
                         Id = entity.Id
-                        //Owner = entity.Owner
                     };
             }
         }
