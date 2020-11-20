@@ -25,7 +25,9 @@ namespace SaveTheWorld.Services
                 {
                     Id = _userId.ToString(),
                     CommentText = model.CommentText,
-                    CreatedUtc = DateTimeOffset.Now
+                    CreatedUtc = DateTimeOffset.Now,
+                    ReplyId = model.ReplyId
+                    
                 };
 
             using (var ctx = new ApplicationDbContext())

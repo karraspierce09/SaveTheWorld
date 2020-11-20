@@ -14,6 +14,7 @@ namespace SaveTheWorld.Models//.Reply
         [Key]
         public int ReplyId { get; set; }
 
+ 
         [ForeignKey(nameof(Tip))]
         public int TipId { get; set; }
         public virtual Tip Tip { get; set; }
@@ -29,12 +30,8 @@ namespace SaveTheWorld.Models//.Reply
         [ForeignKey(nameof(Owner))]
         [Display(Name = "Author")]
 
-        public string Id { get; set; }
+        public string Id { get; set; }  //owner ID
         public virtual Owner Owner { get; set; }
 
-
-
-
-        // do not need date created here
     }
 }
