@@ -6,11 +6,11 @@ using Swashbuckle.Swagger;
 using System.Collections.Generic;
 using System.Web.Http.Description;
 using System.Web.Http.Filters;
-using ElevenNote.WebAPI;
+using SaveTheWorld.WebAPI;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
-namespace ElevenNote.WebAPI
+namespace SaveTheWorld.WebAPI
 {
     /// <summary>
     /// Document filter for adding Authorization header in Swashbuckle / Swagger.
